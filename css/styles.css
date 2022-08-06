@@ -1,0 +1,240 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'League Spartan', sans-serif;
+  width: 32rem;
+  margin: auto;
+  --main-bg: hsl(222, 26%, 31%);
+  --keypad-toggle-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+  --del-reset-bg: hsl(225, 21%, 49%);
+  --del-reset-shadow: hsl(224, 28%, 35%);
+  --equal-thumb-bg: hsl(6, 63%, 50%);
+  --equal-shadow: hsl(6, 70%, 34%);
+  --keys-bg: hsl(30, 25%, 89%);
+  --keys-shadow: hsl(28, 16%, 65%);
+  --keys-text: hsl(221, 14%, 31%);
+  --text: white;
+  --del-reset-text: white;
+  --equal-text: white;
+  background-color: var(--main-bg);
+  color: var(--text);
+}
+
+body.white-theme {
+  --main-bg: hsl(0, 0%, 90%);
+  --keypad-toggle-bg: hsl(0, 5%, 81%);
+  --screen-bg: hsl(0, 0%, 93%);
+  --del-reset-bg: hsl(185, 42%, 37%);
+  --del-reset-shadow: hsl(185, 58%, 25%);
+  --equal-thumb-bg: hsl(25, 98%, 40%);
+  --equal-shadow: hsl(25, 99%, 27%);
+  --keys-bg: hsl(45, 7%, 89%);
+  --keys-shadow: hsl(35, 11%, 61%);
+  --keys-text: hsl(60, 10%, 19%);
+  --text: hsl(60, 10%, 19%);
+}
+
+body.violet-theme {
+  --main-bg: hsl(268, 75%, 9%);
+  --keypad-toggle-bg: hsl(268, 71%, 12%);
+  --screen-bg: hsl(268, 71%, 12%);
+  --del-reset-bg: hsl(281, 89%, 26%);
+  --del-reset-shadow: hsl(285, 91%, 52%);
+  --equal-thumb-bg: hsl(176, 100%, 44%);
+  --equal-shadow: hsl(177, 92%, 70%);
+  --keys-bg: hsl(268, 47%, 21%);
+  --keys-shadow: hsl(290, 70%, 36%);
+  --keys-text: hsl(52, 100%, 62%);
+  --text: hsl(52, 100%, 62%);
+  --equal-text: hsl(198, 20%, 13%);
+}
+
+header,
+.toggle,
+.toggle-numbers,
+.toggle-switcher,
+.screen,
+.keypad {
+  display: flex;
+}
+
+header,
+.toggle-numbers {
+  justify-content: space-between;
+}
+
+header,
+.toggle-switcher,
+.screen {
+  align-items: center;
+}
+
+header {
+  margin-top: 2rem;
+}
+
+.toggle p {
+  font-size: .8rem;
+  margin-right: 1.5rem;
+}
+
+.toggle-switcher {
+  flex-direction: column;
+  margin-top: -0.8rem;
+}
+
+.toggle-numbers {
+  width: 75%;
+}
+
+.switch {
+  width: 4.2rem;
+  height: 1.5rem;
+  padding: 0 5px;
+  -webkit-appearance: none;
+  border-radius: 16px;
+  background-color: var(--keypad-toggle-bg);
+  cursor: pointer;
+}
+
+.switch::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: var(--equal-thumb-bg);
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  }
+
+.switch::-webkit-slider-thumb:hover,
+button:hover {
+  filter:  brightness(1.4);
+}
+
+main {
+  font-size: 36px;
+}
+
+.screen,
+.keypad {
+  border-radius: 8px;
+}
+
+.screen {
+  font-size: 1.5em;
+  background-color: var(--screen-bg);
+  padding: 1.8rem;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+#operation {
+  font-size: 16px;
+  height: 1rem;
+  margin-top: -1rem;
+}
+
+#result {
+  height: 1em;
+  max-width: 455px;
+  overflow: hidden;
+}
+
+.keypad {
+  background-color: var(--keypad-toggle-bg);
+  padding: 1.9rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+button {
+  background-color: var(--keys-bg);
+  color: var(--keys-text);
+  padding-top: 8px;
+  height: 3.5rem;
+  width: 6.15rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px var(--keys-shadow);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#Backspace,
+#reset {
+  background-color: var(--del-reset-bg);
+  color: var(--del-reset-text);
+  box-shadow: 0 4px var(--del-reset-shadow);
+}
+
+#Enter,
+#reset {
+  width: 13.45rem;
+}
+
+#Enter {
+  background-color: var(--equal-thumb-bg);
+  color: var(--equal-text);
+  box-shadow: 0 4px var(--equal-shadow);
+}
+
+@media (max-width: 550px) {
+  body {
+    width: 20rem;
+  }
+
+  header {
+    margin-top: 1rem;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  main {
+    font-size: 28px;
+  }
+
+  #operation {
+    font-size: 14px;
+  }
+
+  #result {
+    max-width: 262px;
+  }
+
+  .keypad {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  button {
+    width: 3.5rem;
+  }
+
+  button:hover {
+    filter: brightness(1.0);
+  }
+
+  button:active {
+    transition-duration: .1s;
+    filter: brightness(1.3);
+  }
+
+  #Backspace,
+  #reset {
+    font-size: 22px;
+  }
+
+  #reset,
+  #Enter {
+    width: 8rem;
+  }
+}
